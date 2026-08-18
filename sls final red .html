@@ -1,0 +1,3424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Single Launda Sameeti 😈</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #080808;
+  color: #f5f5f5;
+  line-height: 1.6;
+}
+
+/* =========================
+   HERO
+========================= */
+
+header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #252525 0%,
+      #0b0b0b 45%,
+      #050505 100%
+    );
+}
+
+.group-label {
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+header h1 {
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: .95;
+  text-transform: uppercase;
+  letter-spacing: -4px;
+  margin-bottom: 20px;
+}
+
+header h1 span {
+  color: #ff3b3b;
+
+  text-shadow:
+    0 0 10px rgba(255,59,59,.4),
+    0 0 25px rgba(255,59,59,.2);
+}
+
+.subtitle {
+  max-width: 650px;
+  color: #aaa;
+  font-size: 17px;
+}
+
+/* =========================
+   MEET THE CRIMINALS
+========================= */
+
+.scroll-down {
+  margin-top: 60px;
+  color: #ff3b3b;
+  font-size: 15.7px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  text-shadow:
+    0 0 5px #ff3b3b,
+    0 0 10px #ff3b3b,
+    0 0 20px rgba(255,59,59,.8);
+
+  animation: neonPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonPulse {
+  from {
+    text-shadow:
+      0 0 5px #ff3b3b,
+      0 0 10px #ff3b3b,
+      0 0 15px rgba(255,59,59,.5);
+  }
+
+  to {
+    text-shadow:
+      0 0 8px #ff3b3b,
+      0 0 18px #ff3b3b,
+      0 0 35px rgba(255,59,59,.9);
+  }
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+  width: min(1200px,92%);
+  margin: auto;
+  padding: 100px 0;
+}
+
+.section-title {
+  margin-bottom: 50px;
+}
+
+.section-title small {
+  color: #ff3b3b;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 13.2px;
+}
+
+.section-title h2 {
+  font-size: clamp(2rem,5vw,4rem);
+  margin-top: 8px;
+}
+
+/* =========================
+   MEMBERS
+========================= */
+
+.members-showcase {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  margin-bottom: 45px;
+}
+
+.member-card {
+  width: 250px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+.member-card:nth-child(n+4) {
+  margin-top: 15px;
+}
+
+.member-photo {
+  width: 210px;
+  height: 210px;
+  margin: auto;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  border: 3px solid #292929;
+  transition: .35s ease;
+
+  position: relative;
+  background: #181818;
+}
+
+.member-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+.member-card:hover .member-photo {
+  border-color: #ff3b3b;
+
+  box-shadow:
+    0 0 20px rgba(255,59,59,.25),
+    0 0 40px rgba(255,59,59,.12);
+
+  transform: translateY(-7px);
+}
+
+.member-card:hover .member-photo img {
+  transform: scale(1.08);
+}
+
+.member-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 18px;
+}
+
+.member-role {
+  color: #777;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+/* =========================
+   PROFILES
+========================= */
+
+.profiles {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.profile {
+  scroll-margin-top: 30px;
+
+  background: #111;
+
+  border: 1px solid #222;
+  border-radius: 25px;
+
+  padding: 30px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.profile-main-photo {
+  width: 100px;
+  height: 100px;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  flex-shrink: 0;
+
+  border: 2px solid #292929;
+}
+
+.profile-main-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile h3 {
+  font-size: 30px;
+}
+
+.profile-header p {
+  color: #777;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.profile-gallery {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.profile-gallery .photo-box {
+  height: 160px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #1b1b1b;
+}
+
+.photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+.photo-box:hover img {
+  transform: scale(1.07);
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.description {
+  color: #aaa;
+}
+
+.description ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.description li {
+  margin-bottom: 8px;
+  padding-left: 22px;
+  position: relative;
+}
+
+.description li::before {
+  content: "✦";
+  color: #ff3b3b;
+  position: absolute;
+  left: 0;
+}
+
+/* =========================
+   FEATS
+========================= */
+
+.feats {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 25px;
+}
+
+.feat-card {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #151515;
+  border: 1px solid #252525;
+}
+
+.feat-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease;
+  opacity: .65;
+}
+
+.feat-card:hover img {
+  transform: scale(1.1);
+}
+
+.feat-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 30px;
+
+  background:
+    linear-gradient(
+      transparent 25%,
+      rgba(0,0,0,.9) 100%
+    );
+}
+
+.feat-overlay h3 {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.feat-overlay p {
+  color: #aaa;
+  max-width: 450px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  border-top: 1px solid #1c1c1c;
+  text-align: center;
+  padding: 50px 20px;
+  color: #555;
+}
+
+footer strong {
+  color: #ff3b3b;
+}
+
+.no-contact {
+  margin-top: 10px;
+  color: #444;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   TINY RED ADMIN BUTTON
+========================= */
+
+#adminTrigger {
+  position: fixed;
+
+  bottom: 18px;
+  right: 18px;
+
+  width: 9px;
+  height: 9px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #ff2020;
+
+  box-shadow:
+    0 0 4px #ff2020,
+    0 0 9px rgba(255,32,32,.8),
+    0 0 15px rgba(255,32,32,.45);
+
+  cursor: pointer;
+
+  z-index: 9999;
+}
+
+#adminTrigger:hover {
+  transform: scale(1.08);
+
+  background: #ff3030;
+
+  box-shadow:
+    0 0 5px #ff2020,
+    0 0 12px #ff2020,
+    0 0 18px rgba(255,32,32,.6);
+}
+
+/* =========================
+   MODALS
+========================= */
+
+.admin-modal {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,.87);
+
+  backdrop-filter: blur(8px);
+
+  z-index: 10000;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+}
+
+.admin-modal.show {
+  display: flex;
+}
+
+.admin-box {
+  position: relative;
+
+  width: min(900px,100%);
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: #111;
+
+  border: 1px solid #333;
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  box-shadow:
+    0 0 30px rgba(255,32,32,.15);
+}
+
+/* =========================
+   CORNER X
+========================= */
+
+.admin-close-x {
+  position: absolute;
+
+  top: 14px;
+  right: 16px;
+
+  width: 36px;
+  height: 36px;
+
+  border: 1px solid #333;
+
+  border-radius: 50%;
+
+  background: #181818;
+
+  color: #ff3030;
+
+  font-size: 21px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: .2s ease;
+}
+
+.admin-close-x:hover {
+  background: #ff3030;
+  color: white;
+
+  box-shadow:
+    0 0 10px #ff3030,
+    0 0 20px rgba(255,48,48,.5);
+}
+
+/* =========================
+   ADMIN
+========================= */
+
+.admin-box h2 {
+  color: #ff3030;
+  margin-bottom: 20px;
+  padding-right: 50px;
+}
+
+.admin-box input,
+.admin-box textarea {
+  width: 100%;
+
+  background: #080808;
+
+  color: white;
+
+  border: 1px solid #333;
+
+  border-radius: 10px;
+
+  padding: 12px;
+
+  margin-top: 7px;
+  margin-bottom: 15px;
+
+  font-family: inherit;
+}
+
+.admin-box textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.admin-box label {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.admin-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-buttons button {
+  border: none;
+  border-radius: 9px;
+  padding: 11px 18px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.save-btn {
+  background: #ff3030;
+  color: white;
+}
+
+.close-btn {
+  background: #292929;
+  color: white;
+}
+
+/* =========================
+   IMAGE UPLOAD
+========================= */
+
+.image-upload-box {
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
+
+.drop-zone {
+  min-height: 130px;
+
+  border: 2px dashed #ff2020;
+
+  border-radius: 15px;
+
+  background: #0b0b0b;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  color: #aaa;
+
+  cursor: pointer;
+
+  transition: .25s ease;
+
+  text-align: center;
+}
+
+.drop-zone span {
+  font-size: 28px;
+}
+
+.drop-zone strong {
+  color: white;
+}
+
+.drop-zone small {
+  color: #666;
+}
+
+.drop-zone:hover,
+.drop-zone.dragover {
+  background: #1a0808;
+
+  border-color: #ff4040;
+
+  box-shadow:
+    0 0 10px rgba(255,32,32,.4),
+    0 0 25px rgba(255,32,32,.15);
+}
+
+.upload-preview {
+  width: 140px;
+  height: 140px;
+
+  object-fit: cover;
+
+  border-radius: 12px;
+
+  margin-top: 12px;
+
+  border: 2px solid #ff2020;
+}
+
+/* =========================
+   ADMIN MEMBER
+========================= */
+
+.admin-member {
+  background: #181818;
+
+  border: 1px solid #292929;
+
+  border-radius: 15px;
+
+  padding: 20px;
+
+  margin-bottom: 20px;
+}
+
+.admin-member h3 {
+  color: #ff3b3b;
+  margin-bottom: 15px;
+}
+
+.admin-image-row {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+}
+
+.admin-image-item {
+  background: #101010;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.admin-image-item img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 7px;
+}
+
+/* =========================
+   CROP EDITOR
+========================= */
+
+#cropModal {
+  z-index: 20000;
+}
+
+.crop-box {
+  width: min(900px, 100%);
+  max-height: 94vh;
+  overflow-y: auto;
+
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 20px;
+
+  padding: 24px;
+
+  box-shadow:
+    0 0 40px rgba(255,30,30,.25);
+
+  position: relative;
+}
+
+.crop-box h2 {
+  color: #ff3030;
+  margin-bottom: 5px;
+}
+
+.crop-info {
+  color: #777;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Crop workspace */
+
+.crop-stage {
+  width: 100%;
+  height: min(58vh, 560px);
+
+  min-height: 300px;
+
+  background:
+    repeating-conic-gradient(
+      #090909 0% 25%,
+      #0d0d0d 0% 50%
+    ) 50% / 20px 20px;
+
+  border: 1px solid #292929;
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  touch-action: none;
+
+  user-select: none;
+}
+
+#cropCanvas {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  cursor: grab;
+
+  touch-action: none;
+
+  user-select: none;
+}
+
+#cropCanvas.dragging {
+  cursor: grabbing;
+}
+
+/* Crop ratio badge */
+
+.crop-ratio {
+  position: absolute;
+
+  top: 12px;
+  left: 12px;
+
+  z-index: 5;
+
+  background: rgba(0,0,0,.75);
+
+  border: 1px solid #333;
+  border-radius: 8px;
+
+  padding: 6px 10px;
+
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  pointer-events: none;
+}
+
+/* Controls */
+
+.crop-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 16px;
+
+  flex-wrap: wrap;
+}
+
+.crop-controls button {
+  border: 1px solid #333;
+
+  background: #242424;
+  color: white;
+
+  min-width: 42px;
+  height: 40px;
+
+  padding: 8px 13px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.crop-controls button:hover {
+  background: #ff3030;
+  border-color: #ff3030;
+}
+
+#zoomRange {
+  accent-color: #ff3030;
+
+  flex: 1;
+
+  min-width: 160px;
+}
+
+/* Actions */
+
+.crop-actions {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 18px;
+}
+
+.crop-actions button {
+  padding: 11px 18px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+}
+
+.crop-save {
+  background: #ff3030;
+  color: white;
+
+  flex: 1;
+}
+
+.crop-cancel {
+  background: #292929;
+  color: white;
+}
+
+.crop-save:hover {
+  background: #ff4545;
+}
+
+/* Mobile */
+
+@media(max-width:700px) {
+
+  .crop-box {
+    padding: 16px;
+  }
+
+  .crop-stage {
+    height: 58vh;
+    min-height: 280px;
+  }
+
+  .crop-actions {
+    flex-direction: column;
+  }
+
+  .crop-actions button {
+    width: 100%;
+  }
+}
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px) {
+
+  header h1 {
+    letter-spacing: -2px;
+  }
+
+  section {
+    padding: 70px 0;
+  }
+
+  .profile {
+    padding: 22px;
+  }
+
+  .profile-header {
+    align-items: flex-start;
+  }
+
+  .profile-main-photo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile h3 {
+    font-size: 24px;
+  }
+
+  .profile-gallery {
+    gap: 8px;
+  }
+
+  .profile-gallery .photo-box {
+    height: 105px;
+  }
+
+  .feats {
+    grid-template-columns: 1fr;
+  }
+
+  .feat-card {
+    height: 300px;
+  }
+
+  .admin-image-row {
+    grid-template-columns: 1fr;
+  }
+
+  .scroll-down {
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  .crop-stage {
+    height: 300px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="group-label">
+    Est. whenever the chaos started
+  </div>
+
+  <h1>
+    Single<br>
+    Launda <span>Sameeti 😈</span>
+  </h1>
+
+  <p class="subtitle">
+    Five singles. One group chat. Zero productive conversations....
+  </p>
+
+  <div class="scroll-down">
+    ↓ Meet the criminals
+  </div>
+
+</header>
+
+
+<section id="members">
+
+  <div class="section-title">
+
+    <small>
+      The Council
+    </small>
+
+    <h2>
+      Meet the members
+    </h2>
+
+  </div>
+
+  <div class="members-showcase" id="membersShowcase"></div>
+
+</section>
+
+
+<section>
+
+  <div class="section-title">
+
+    <small>
+      Classified Information
+    </small>
+
+    <h2>
+      Member files
+    </h2>
+
+  </div>
+
+  <div class="profiles" id="profiles"></div>
+
+</section>
+
+
+<section id="feats">
+
+  <div class="section-title">
+
+    <small>
+      Hall of Fame
+    </small>
+
+    <h2>
+      Group feats...
+    </h2>
+
+  </div>
+
+  <div class="feats" id="featsContainer"></div>
+
+</section>
+
+
+<footer>
+
+  <p>
+    Made with questionable decisions by
+    <strong>Single Launda Sameeti</strong>
+  </p>
+
+  <p class="no-contact">
+    No contact information provided.
+    <br>
+    We barely contact each other anyway.
+  </p>
+
+</footer>
+
+
+<!-- TINY ADMIN BUTTON -->
+
+<button id="adminTrigger" aria-label="Admin"></button>
+
+
+<!-- LOGIN -->
+
+<div class="admin-modal" id="loginModal">
+
+  <div class="admin-box">
+
+    <button
+      class="admin-close-x"
+      onclick="closeLogin()">
+      ×
+    </button>
+
+    <h2>Admin Login</h2>
+
+    <label>Username</label>
+
+    <input
+      type="text"
+      id="adminUsername"
+      placeholder="Username"
+      autocomplete="off">
+
+    <label>Password</label>
+
+    <input
+      type="password"
+      id="adminPassword"
+      placeholder="Password"
+      autocomplete="off">
+
+    <div class="admin-buttons">
+
+      <button
+        class="save-btn"
+        onclick="loginAdmin()">
+        Login
+      </button>
+
+    </div>
+
+    <p
+      id="loginMessage"
+      style="color:#ff3030;margin-top:12px;">
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- ADMIN PANEL -->
+
+<div class="admin-modal" id="adminModal">
+
+  <div class="admin-box">
+
+    <button
+      class="admin-close-x"
+      onclick="closeAdmin()"
+      aria-label="Close admin panel">
+      ×
+    </button>
+
+    <h2>
+      😈 Council Administration
+    </h2>
+
+    <p style="color:#666;margin-bottom:25px;">
+      Edit members, descriptions and photos.
+    </p>
+
+    <div id="adminContent"></div>
+
+    <div class="admin-buttons">
+
+      <button
+        class="save-btn"
+        onclick="saveEverything()">
+        Save Everything
+      </button>
+
+    </div>
+
+    <p
+      id="saveMessage"
+      style="color:#5cff75;margin-top:15px;">
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- CROP MODAL -->
+
+<div
+  class="admin-modal"
+  id="cropModal">
+
+  <div class="crop-box">
+
+    <button
+      class="admin-close-x"
+      onclick="cancelCrop()"
+      aria-label="Close crop editor">
+      ×
+    </button>
+
+    <h2>Crop Image</h2>
+
+    <p class="crop-info" id="cropInfo">
+      Drag the image to position it. Use zoom to adjust the framing.
+    </p>
+
+    <div class="crop-stage">
+
+      <div
+        class="crop-ratio"
+        id="cropRatio">
+        1:1
+      </div>
+
+      <canvas id="cropCanvas"></canvas>
+
+    </div>
+
+    <div class="crop-controls">
+
+      <button
+        type="button"
+        onclick="zoomOut()">
+        −
+      </button>
+
+      <input
+        type="range"
+        id="zoomRange"
+        min="1"
+        max="4"
+        step="0.01"
+        value="1">
+
+      <button
+        type="button"
+        onclick="zoomIn()">
+        +
+      </button>
+
+      <button
+        type="button"
+        onclick="resetCrop()">
+        Reset
+      </button>
+
+    </div>
+
+    <div class="crop-actions">
+
+      <button
+        type="button"
+        class="crop-save"
+        onclick="applyCrop()">
+        Use Cropped Image
+      </button>
+
+      <button
+        type="button"
+        class="crop-cancel"
+        onclick="cancelCrop()">
+        Cancel
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+/* =====================================================
+   SUPABASE
+===================================================== */
+
+const SUPABASE_URL =
+  "https://kywmyvsegdpqjldwcuhv.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+  "sb_publishable_S-UqsrVvqc6th4wxX9dPVA_1o9Mnrbu";
+
+let supabaseClient = null;
+
+if (
+  SUPABASE_URL !== "YOUR_SUPABASE_URL" &&
+  SUPABASE_PUBLISHABLE_KEY !==
+    "YOUR_SUPABASE_PUBLISHABLE_KEY"
+) {
+
+  supabaseClient =
+    window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY
+    );
+}
+
+
+/* =====================================================
+   WEBSITE DATA
+===================================================== */
+
+let siteData = {
+
+  members: [
+
+    {
+      id: "member1",
+      name: "ADITYA",
+      role: "ILLUMINATI",
+      subtitle: "Nunnu ki sabzi",
+
+      main:
+        "https://placehold.co/600x600/151515/ff3b3b?text=GUGUGAGA",
+
+      photos: [
+        "https://placehold.co/600x400/151515/ffffff?text=GUGUGAGA",
+        "https://placehold.co/600x400/181818/ffffff?text=GUGUGAGA",
+        "https://placehold.co/600x400/1b1b1b/ffffff?text=GUGUGAGA"
+      ],
+
+      description: [
+        "Add description about this person here.",
+        "Add their most iconic quality here.",
+        "Add a funny fact or inside joke here.",
+        "Add one more legendary achievement here."
+      ]
+    },
+
+    {
+      id: "member2",
+      name: "ATUL RAWAT",
+      role: "Professional Menace",
+      subtitle: "Lawda",
+
+      main:
+        "https://placehold.co/600x600/181818/ff3b3b?text=GUGUGAGA",
+
+      photos: [
+        "https://placehold.co/600x400/151515/ffffff?text=GUGUGAGA",
+        "https://placehold.co/600x400/181818/ffffff?text=GUGUGAGA",
+        "https://placehold.co/600x400/1b1b1b/ffffff?text=GUGUGAGA"
+      ],
+
+      description: [
+        "Add description about this person here.",
+        "Add their most iconic quality here.",
+        "Add a funny fact or inside joke here.",
+        "Add one more legendary achievement here."
+      ]
+    },
+
+    {
+      id: "member3",
+      name: "MAYANK",
+      role: "The Strategist",
+      subtitle: "occupe",
+
+      main:
+        "https://placehold.co/600x600/1b1b1b/ff3b3b?text=GUGUGAGA",
+
+      photos: [
+        "https://placehold.co/600x400/151515/ffffff?text=GUGUGAGA",
+        "https://placehold.co/600x400/181818/ffffff?text=GUGUGAGA",
+        "https://placehold.co/600x400/1b1b1b/ffffff?text=GUGUGAGA"
+      ],
+
+      description: [
+        "Add description about this person here.",
+        "Add their most iconic quality here.",
+        "Add a funny fact or inside joke here.",
+        "Add one more legendary achievement here."
+      ]
+    },
+
+    {
+      id: "member4",
+      name: "KARANVEER",
+      role: "The Si",
+      subtitle: "Pappu ka baap",
+
+      main:
+        "https://placehold.co/600x600/202020/ff3b3b?text=GUGUGAGA",
+
+      photos: [
+        "https://placehold.co/600x400/151515/ffffff?text=GUGUGAGA",
+        "https://placehold.co/600x400/181818/ffffff?text=GUGUGAGA",
+        "https://placehold.co/600x400/1b1b1b/ffffff?text=GUGUGAGA"
+      ],
+
+      description: [
+        "Add description about this person here.",
+        "Add their most iconic quality here.",
+        "Add a funny fact or inside joke here.",
+        "Add one more legendary achievement here."
+      ]
+    },
+
+    {
+      id: "member5",
+      name: "AKSHAY",
+      role: "Chaos Coordinator",
+      subtitle: "Mai hu Karan ka Pampa G",
+
+      main:
+        "https://placehold.co/600x600/222222/ff3b3b?text=GUGUGAGA",
+
+      photos: [
+        "https://placehold.co/600x400/151515/ffffff?text=GUGUGAGA",
+        "https://placehold.co/600x400/181818/ffffff?text=GUGUGAGA",
+        "https://placehold.co/600x400/1b1b1b/ffffff?text=GUGUGAGA"
+      ],
+
+      description: [
+        "Add description about this person here.",
+        "Add their most iconic quality here.",
+        "Add a funny fact or inside joke here.",
+        "Add one more legendary achievement here."
+      ]
+    }
+
+  ],
+
+  feats: [
+
+    {
+      title: "Feat #01",
+      image:
+        "https://placehold.co/1200x800/151515/ffffff?text=GUGUGAGA",
+      description:
+        "Add the story or achievement of the group here."
+    },
+
+    {
+      title: "Feat #02",
+      image:
+        "https://placehold.co/1200x800/181818/ffffff?text=GUGUGAGA",
+      description:
+        "Add another legendary group moment here."
+    },
+
+    {
+      title: "Feat #03",
+      image:
+        "https://placehold.co/1200x800/1b1b1b/ffffff?text=GUGUGAGA",
+      description:
+        "Add another memory, achievement or inside joke here."
+    },
+
+    {
+      title: "Feat #04",
+      image:
+        "https://placehold.co/1200x800/202020/ffffff?text=GUGUGAGA",
+      description:
+        "Add your final group achievement here."
+    }
+
+  ]
+
+};
+
+
+/* =====================================================
+   RENDER WEBSITE
+===================================================== */
+
+function renderWebsite() {
+
+  const showcase =
+    document.getElementById("membersShowcase");
+
+  const profiles =
+    document.getElementById("profiles");
+
+  const feats =
+    document.getElementById("featsContainer");
+
+  showcase.innerHTML = "";
+  profiles.innerHTML = "";
+  feats.innerHTML = "";
+
+  siteData.members.forEach(member => {
+
+    showcase.innerHTML += `
+
+      <a
+        href="#${member.id}"
+        class="member-card">
+
+        <div class="member-photo">
+          <img
+            src="${safeURL(member.main)}"
+            alt="${escapeHTML(member.name)}">
+        </div>
+
+        <div class="member-name">
+          ${escapeHTML(member.name)}
+        </div>
+
+        <div class="member-role">
+          ${escapeHTML(member.role)}
+        </div>
+
+      </a>
+
+    `;
+
+
+    profiles.innerHTML += `
+
+      <article
+        class="profile"
+        id="${member.id}">
+
+        <div class="profile-header">
+
+          <div class="profile-main-photo">
+
+            <img
+              src="${safeURL(member.main)}"
+              alt="${escapeHTML(member.name)}">
+
+          </div>
+
+          <div>
+
+            <h3>
+              ${escapeHTML(member.name)}
+            </h3>
+
+            <p>
+              ${escapeHTML(member.subtitle)}
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="profile-gallery">
+
+          ${member.photos.map(photo => `
+
+            <div class="photo-box">
+
+              <img
+                src="${safeURL(photo)}"
+                alt="Member photo">
+
+            </div>
+
+          `).join("")}
+
+        </div>
+
+
+        <div class="description">
+
+          <ul>
+
+            ${member.description.map(item => `
+
+              <li>
+                ${escapeHTML(item)}
+              </li>
+
+            `).join("")}
+
+          </ul>
+
+        </div>
+
+      </article>
+
+    `;
+
+  });
+
+
+  siteData.feats.forEach(feat => {
+
+    feats.innerHTML += `
+
+      <div class="feat-card">
+
+        <img
+          src="${safeURL(feat.image)}"
+          alt="Group feat">
+
+        <div class="feat-overlay">
+
+          <h3>
+            ${escapeHTML(feat.title)}
+          </h3>
+
+          <p>
+            ${escapeHTML(feat.description)}
+          </p>
+
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+
+/* =====================================================
+   ADMIN FOUR CLICKS
+===================================================== */
+
+let adminClicks = 0;
+let clickTimer;
+
+document
+  .getElementById("adminTrigger")
+  .addEventListener("click", () => {
+
+    adminClicks++;
+
+    clearTimeout(clickTimer);
+
+    clickTimer = setTimeout(() => {
+      adminClicks = 0;
+    }, 1500);
+
+    if (adminClicks >= 4) {
+
+      adminClicks = 0;
+
+      document
+        .getElementById("loginModal")
+        .classList.add("show");
+
+      document
+        .getElementById("adminUsername")
+        .focus();
+
+    }
+
+  });
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+function loginAdmin() {
+
+  const username =
+    document.getElementById("adminUsername").value;
+
+  const password =
+    document.getElementById("adminPassword").value;
+
+  if (
+    username === "admin" &&
+    password === "password1"
+  ) {
+
+    document
+      .getElementById("loginModal")
+      .classList.remove("show");
+
+    document
+      .getElementById("adminModal")
+      .classList.add("show");
+
+    buildAdminPanel();
+
+  } else {
+
+    document
+      .getElementById("loginMessage")
+      .textContent =
+      "Wrong username or password.";
+
+  }
+
+}
+
+
+function closeLogin() {
+
+  document
+    .getElementById("loginModal")
+    .classList.remove("show");
+
+  resetLogin();
+
+}
+
+
+function resetLogin() {
+
+  document
+    .getElementById("adminUsername")
+    .value = "";
+
+  document
+    .getElementById("adminPassword")
+    .value = "";
+
+  document
+    .getElementById("loginMessage")
+    .textContent = "";
+
+}
+
+
+/* =====================================================
+   ADMIN PANEL
+===================================================== */
+
+function buildAdminPanel() {
+
+  const container =
+    document.getElementById("adminContent");
+
+  container.innerHTML = "";
+
+  siteData.members.forEach((member,index) => {
+
+    container.innerHTML += `
+
+      <div class="admin-member">
+
+        <h3>
+          Member ${index + 1}
+        </h3>
+
+        <label>Name</label>
+
+        <input
+          id="name-${index}"
+          value="${escapeHTML(member.name)}">
+
+
+        <label>Role</label>
+
+        <input
+          id="role-${index}"
+          value="${escapeHTML(member.role)}">
+
+
+        <label>Subtitle</label>
+
+        <input
+          id="subtitle-${index}"
+          value="${escapeHTML(member.subtitle)}">
+
+
+        <label>Main / Top Photo</label>
+
+        <div class="image-upload-box">
+
+          <div
+            class="drop-zone"
+            data-target="member-${index}-main">
+
+            <span>📷</span>
+
+            <strong>
+              Choose or drag image
+            </strong>
+
+            <small>
+              Crop will open automatically
+            </small>
+
+            <input
+              type="file"
+              id="file-${index}-main"
+              accept="image/*"
+              hidden
+              onchange="
+                startCropFromInput(
+                  event,
+                  'member',
+                  ${index},
+                  'main'
+                )
+              ">
+
+          </div>
+
+          <img
+            id="preview-${index}-main"
+            class="upload-preview"
+            src="${safeURL(member.main)}">
+
+        </div>
+
+
+        <label>Description</label>
+
+        ${member.description.map((text,d) => `
+
+          <textarea
+            id="desc-${index}-${d}">${escapeHTML(text)}</textarea>
+
+        `).join("")}
+
+
+        <h4
+          style="
+          color:#aaa;
+          margin:20px 0 10px;">
+          Three Gallery Photos
+        </h4>
+
+
+        <div class="admin-image-row">
+
+          ${member.photos.map((photo,p) => `
+
+            <div class="admin-image-item">
+
+              <img
+                id="preview-${index}-${p}"
+                src="${safeURL(photo)}">
+
+              <div
+                class="drop-zone"
+                data-target="member-${index}-${p}">
+
+                <strong>
+                  📷 Change / Drop
+                </strong>
+
+                <input
+                  type="file"
+                  id="file-${index}-${p}"
+                  accept="image/*"
+                  hidden
+                  onchange="
+                    startCropFromInput(
+                      event,
+                      'member',
+                      ${index},
+                      ${p}
+                    )
+                  ">
+
+              </div>
+
+            </div>
+
+          `).join("")}
+
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+
+  container.innerHTML += `
+
+    <h3
+      style="
+      color:#ff3030;
+      margin:30px 0 15px;">
+      Group Feats
+    </h3>
+
+  `;
+
+
+  siteData.feats.forEach((feat,index) => {
+
+    container.innerHTML += `
+
+      <div class="admin-member">
+
+        <h3>
+          Feat #${index + 1}
+        </h3>
+
+        <label>Title</label>
+
+        <input
+          id="feat-title-${index}"
+          value="${escapeHTML(feat.title)}">
+
+
+        <label>Description</label>
+
+        <textarea
+          id="feat-desc-${index}">${escapeHTML(feat.description)}</textarea>
+
+
+        <div class="image-upload-box">
+
+          <div
+            class="drop-zone"
+            data-target="feat-${index}">
+
+            <span>📷</span>
+
+            <strong>
+              Choose or drag image
+            </strong>
+
+            <small>
+              Crop will open automatically
+            </small>
+
+            <input
+              type="file"
+              id="feat-file-${index}"
+              accept="image/*"
+              hidden
+              onchange="
+                startCropFromInput(
+                  event,
+                  'feat',
+                  ${index},
+                  null
+                )
+              ">
+
+          </div>
+
+          <img
+            id="feat-preview-${index}"
+            class="upload-preview"
+            src="${safeURL(feat.image)}">
+
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+
+  attachDropZones();
+
+}
+
+
+/* =====================================================
+   IMAGE PICKER
+===================================================== */
+
+document.addEventListener("click", function(event) {
+
+  const zone =
+    event.target.closest(".drop-zone");
+
+  if (!zone) return;
+
+  const input =
+    zone.querySelector("input[type=file]");
+
+  if (input) {
+    input.click();
+  }
+
+});
+
+
+/* =====================================================
+   DRAG & DROP
+===================================================== */
+
+function attachDropZones() {
+
+  document
+    .querySelectorAll(".drop-zone")
+    .forEach(zone => {
+
+      zone.addEventListener(
+        "dragover",
+        event => {
+
+          event.preventDefault();
+
+          zone.classList.add("dragover");
+
+        }
+      );
+
+
+      zone.addEventListener(
+        "dragleave",
+        () => {
+
+          zone.classList.remove("dragover");
+
+        }
+      );
+
+
+      zone.addEventListener(
+        "drop",
+        event => {
+
+          event.preventDefault();
+
+          zone.classList.remove("dragover");
+
+          const file =
+            event.dataTransfer.files[0];
+
+          if (!file) return;
+
+          if (!file.type.startsWith("image/")) {
+
+            alert("Please drop an image.");
+
+            return;
+
+          }
+
+          const target =
+            zone.dataset.target;
+
+          if (target.startsWith("member-")) {
+
+            const parts =
+              target.split("-");
+
+            startCrop(
+              file,
+              "member",
+              Number(parts[1]),
+              parts[2] === "main"
+                ? "main"
+                : Number(parts[2])
+            );
+
+          } else {
+
+            const parts =
+              target.split("-");
+
+            startCrop(
+              file,
+              "feat",
+              Number(parts[1]),
+              null
+            );
+
+          }
+
+        }
+      );
+
+    });
+
+}
+
+
+/* =====================================================
+   WORKING CROP EDITOR
+===================================================== */
+
+let cropState = {
+  file: null,
+  targetType: null,
+  memberIndex: null,
+  photoIndex: null,
+
+  image: null,
+
+  scale: 1,
+  offsetX: 0,
+  offsetY: 0,
+
+  dragging: false,
+  startX: 0,
+  startY: 0
+};
+
+
+/* =====================================================
+   GET CROP RATIO
+===================================================== */
+
+function getCropRatio() {
+
+  /*
+    MAIN / TOP PHOTO
+    = square
+
+    GALLERY PHOTOS
+    = 3:2 rectangle
+
+    GROUP FEATS
+    = 3:2 rectangle
+  */
+
+  if (
+    cropState.targetType === "member" &&
+    cropState.photoIndex === "main"
+  ) {
+    return 1;
+  }
+
+  return 3 / 2;
+}
+
+
+/* =====================================================
+   GET OUTPUT SIZE
+===================================================== */
+
+function getOutputSize() {
+
+  const ratio = getCropRatio();
+
+  if (ratio === 1) {
+    return {
+      width: 1000,
+      height: 1000
+    };
+  }
+
+  return {
+    width: 1200,
+    height: 800
+  };
+}
+
+
+/* =====================================================
+   START CROP FROM INPUT
+===================================================== */
+
+function startCropFromInput(
+  event,
+  type,
+  index,
+  photo
+) {
+
+  const file = event.target.files[0];
+
+  if (!file) return;
+
+  startCrop(
+    file,
+    type,
+    index,
+    photo
+  );
+
+  /*
+    Allows selecting the same image again later.
+  */
+  event.target.value = "";
+}
+
+
+/* =====================================================
+   START CROP
+===================================================== */
+
+function startCrop(
+  file,
+  type,
+  index,
+  photo
+) {
+
+  if (!file || !file.type.startsWith("image/")) {
+
+    alert("Please choose an image.");
+
+    return;
+  }
+
+
+  cropState.file = file;
+  cropState.targetType = type;
+  cropState.memberIndex = index;
+  cropState.photoIndex = photo;
+
+  cropState.image = null;
+
+  cropState.scale = 1;
+
+  cropState.offsetX = 0;
+  cropState.offsetY = 0;
+
+  cropState.dragging = false;
+
+
+  const reader = new FileReader();
+
+
+  reader.onload = function(event) {
+
+    const img = new Image();
+
+
+    img.onload = function() {
+
+      cropState.image = img;
+
+
+      document
+        .getElementById("cropModal")
+        .classList.add("show");
+
+
+      document
+        .getElementById("zoomRange")
+        .value = 1;
+
+
+      /*
+        Wait until modal has actually been displayed
+        so canvas gets the correct dimensions.
+      */
+      requestAnimationFrame(() => {
+
+        drawCrop();
+
+      });
+
+    };
+
+
+    img.onerror = function() {
+
+      alert("Could not load this image.");
+
+    };
+
+
+    img.src = event.target.result;
+
+  };
+
+
+  reader.readAsDataURL(file);
+}
+
+
+/* =====================================================
+   CANVAS
+===================================================== */
+
+const cropCanvas =
+  document.getElementById("cropCanvas");
+
+const cropCtx =
+  cropCanvas.getContext("2d");
+
+
+/* =====================================================
+   DRAW CROP
+===================================================== */
+
+function drawCrop() {
+
+  const stage =
+    document.querySelector(".crop-stage");
+
+  if (!stage || !cropState.image) {
+    return;
+  }
+
+
+  const width =
+    stage.clientWidth;
+
+  const height =
+    stage.clientHeight;
+
+
+  if (width <= 0 || height <= 0) {
+    return;
+  }
+
+
+  const dpr =
+    window.devicePixelRatio || 1;
+
+
+  cropCanvas.width =
+    Math.round(width * dpr);
+
+  cropCanvas.height =
+    Math.round(height * dpr);
+
+
+  cropCanvas.style.width =
+    width + "px";
+
+  cropCanvas.style.height =
+    height + "px";
+
+
+  cropCtx.setTransform(
+    dpr,
+    0,
+    0,
+    dpr,
+    0,
+    0
+  );
+
+
+  cropCtx.clearRect(
+    0,
+    0,
+    width,
+    height
+  );
+
+
+  cropCtx.fillStyle =
+    "#050505";
+
+  cropCtx.fillRect(
+    0,
+    0,
+    width,
+    height
+  );
+
+
+  const img =
+    cropState.image;
+
+
+  /*
+    The image is initially scaled so that
+    the entire crop area is covered.
+  */
+
+  const ratio =
+    getCropRatio();
+
+
+  let cropWidth;
+  let cropHeight;
+
+
+  if (width / height > ratio) {
+
+    cropHeight =
+      height * 0.82;
+
+    cropWidth =
+      cropHeight * ratio;
+
+  } else {
+
+    cropWidth =
+      width * 0.82;
+
+    cropHeight =
+      cropWidth / ratio;
+
+  }
+
+
+  /*
+    Scale image enough to cover crop rectangle.
+  */
+
+  const baseScale =
+    Math.max(
+      cropWidth / img.width,
+      cropHeight / img.height
+    );
+
+
+  const finalScale =
+    baseScale * cropState.scale;
+
+
+  const drawWidth =
+    img.width * finalScale;
+
+  const drawHeight =
+    img.height * finalScale;
+
+
+  const centerX =
+    width / 2 + cropState.offsetX;
+
+  const centerY =
+    height / 2 + cropState.offsetY;
+
+
+  const x =
+    centerX - drawWidth / 2;
+
+  const y =
+    centerY - drawHeight / 2;
+
+
+  /*
+    Draw image.
+  */
+
+  cropCtx.drawImage(
+    img,
+    x,
+    y,
+    drawWidth,
+    drawHeight
+  );
+
+
+  /* =================================================
+     DARK OUTSIDE CROP
+  ================================================= */
+
+  const cropX =
+    (width - cropWidth) / 2;
+
+  const cropY =
+    (height - cropHeight) / 2;
+
+
+  cropCtx.save();
+
+
+  cropCtx.fillStyle =
+    "rgba(0,0,0,.62)";
+
+
+  cropCtx.beginPath();
+
+
+  cropCtx.rect(
+    0,
+    0,
+    width,
+    height
+  );
+
+
+  /*
+    MAIN IMAGE = CIRCLE GUIDE
+  */
+
+  if (ratio === 1) {
+
+    cropCtx.arc(
+      width / 2,
+      height / 2,
+      cropWidth / 2,
+      0,
+      Math.PI * 2,
+      true
+    );
+
+  }
+
+  /*
+    GALLERY / FEAT = RECTANGLE GUIDE
+  */
+
+  else {
+
+    cropCtx.rect(
+      cropX,
+      cropY,
+      cropWidth,
+      cropHeight
+    );
+
+  }
+
+
+  cropCtx.fill("evenodd");
+
+
+  /* =================================================
+     RED CROP BORDER
+  ================================================= */
+
+  cropCtx.strokeStyle =
+    "#ff3030";
+
+  cropCtx.lineWidth =
+    2;
+
+
+  if (ratio === 1) {
+
+    cropCtx.beginPath();
+
+    cropCtx.arc(
+      width / 2,
+      height / 2,
+      cropWidth / 2,
+      0,
+      Math.PI * 2
+    );
+
+    cropCtx.stroke();
+
+  } else {
+
+    cropCtx.strokeRect(
+      cropX,
+      cropY,
+      cropWidth,
+      cropHeight
+    );
+
+  }
+
+
+  cropCtx.restore();
+
+
+  /*
+    Small instruction.
+  */
+
+  cropCtx.fillStyle =
+    "rgba(255,255,255,.65)";
+
+  cropCtx.font =
+    "13px Arial";
+
+  cropCtx.textAlign =
+    "center";
+
+  cropCtx.fillText(
+    "Drag image • Use zoom",
+    width / 2,
+    height - 15
+  );
+
+}
+
+
+/* =====================================================
+   ZOOM
+===================================================== */
+
+document
+  .getElementById("zoomRange")
+  .addEventListener(
+    "input",
+    function() {
+
+      cropState.scale =
+        Number(this.value);
+
+      drawCrop();
+
+    }
+  );
+
+
+function zoomIn() {
+
+  const slider =
+    document.getElementById("zoomRange");
+
+
+  slider.value =
+    Math.min(
+      4,
+      Number(slider.value) + 0.1
+    );
+
+
+  cropState.scale =
+    Number(slider.value);
+
+
+  drawCrop();
+}
+
+
+function zoomOut() {
+
+  const slider =
+    document.getElementById("zoomRange");
+
+
+  slider.value =
+    Math.max(
+      0.5,
+      Number(slider.value) - 0.1
+    );
+
+
+  cropState.scale =
+    Number(slider.value);
+
+
+  drawCrop();
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+function resetCrop() {
+
+  cropState.scale = 1;
+
+  cropState.offsetX = 0;
+  cropState.offsetY = 0;
+
+  document
+    .getElementById("zoomRange")
+    .value = 1;
+
+  drawCrop();
+}
+
+
+/* =====================================================
+   DRAG IMAGE
+===================================================== */
+
+cropCanvas.addEventListener(
+  "pointerdown",
+  function(event) {
+
+    if (!cropState.image) {
+      return;
+    }
+
+
+    cropState.dragging = true;
+
+
+    cropState.startX =
+      event.clientX -
+      cropState.offsetX;
+
+
+    cropState.startY =
+      event.clientY -
+      cropState.offsetY;
+
+
+    cropCanvas.setPointerCapture(
+      event.pointerId
+    );
+
+  }
+);
+
+
+cropCanvas.addEventListener(
+  "pointermove",
+  function(event) {
+
+    if (!cropState.dragging) {
+      return;
+    }
+
+
+    cropState.offsetX =
+      event.clientX -
+      cropState.startX;
+
+
+    cropState.offsetY =
+      event.clientY -
+      cropState.startY;
+
+
+    drawCrop();
+
+  }
+);
+
+
+function stopCropDrag(event) {
+
+  cropState.dragging = false;
+
+
+  try {
+
+    if (
+      event &&
+      cropCanvas.hasPointerCapture(
+        event.pointerId
+      )
+    ) {
+
+      cropCanvas.releasePointerCapture(
+        event.pointerId
+      );
+
+    }
+
+  } catch (error) {}
+
+}
+
+
+cropCanvas.addEventListener(
+  "pointerup",
+  stopCropDrag
+);
+
+
+cropCanvas.addEventListener(
+  "pointercancel",
+  stopCropDrag
+);
+
+
+/* =====================================================
+   APPLY CROP
+===================================================== */
+
+function applyCrop() {
+
+  const img =
+    cropState.image;
+
+
+  if (!img) {
+    return;
+  }
+
+
+  const stage =
+    document.querySelector(".crop-stage");
+
+
+  const width =
+    stage.clientWidth;
+
+  const height =
+    stage.clientHeight;
+
+
+  const ratio =
+    getCropRatio();
+
+
+  let cropWidth;
+  let cropHeight;
+
+
+  /*
+    SAME CROP BOX CALCULATION AS drawCrop()
+  */
+
+  if (width / height > ratio) {
+
+    cropHeight =
+      height * 0.82;
+
+    cropWidth =
+      cropHeight * ratio;
+
+  } else {
+
+    cropWidth =
+      width * 0.82;
+
+    cropHeight =
+      cropWidth / ratio;
+
+  }
+
+
+  const baseScale =
+    Math.max(
+      cropWidth / img.width,
+      cropHeight / img.height
+    );
+
+
+  const finalScale =
+    baseScale * cropState.scale;
+
+
+  const drawWidth =
+    img.width * finalScale;
+
+  const drawHeight =
+    img.height * finalScale;
+
+
+  const centerX =
+    width / 2 +
+    cropState.offsetX;
+
+  const centerY =
+    height / 2 +
+    cropState.offsetY;
+
+
+  const imageX =
+    centerX -
+    drawWidth / 2;
+
+  const imageY =
+    centerY -
+    drawHeight / 2;
+
+
+  /*
+    Convert canvas crop coordinates
+    back into original image coordinates.
+  */
+
+  const sourceX =
+    (width / 2 -
+      cropWidth / 2 -
+      imageX) /
+    finalScale;
+
+
+  const sourceY =
+    (height / 2 -
+      cropHeight / 2 -
+      imageY) /
+    finalScale;
+
+
+  const sourceWidth =
+    cropWidth /
+    finalScale;
+
+
+  const sourceHeight =
+    cropHeight /
+    finalScale;
+
+
+  /*
+    Output dimensions.
+  */
+
+  const outputSize =
+    getOutputSize();
+
+
+  const output =
+    document.createElement("canvas");
+
+
+  output.width =
+    outputSize.width;
+
+  output.height =
+    outputSize.height;
+
+
+  const ctx =
+    output.getContext("2d");
+
+
+  ctx.imageSmoothingEnabled =
+    true;
+
+  ctx.imageSmoothingQuality =
+    "high";
+
+
+  /*
+    Always output JPEG.
+  */
+
+  ctx.fillStyle =
+    "#000";
+
+  ctx.fillRect(
+    0,
+    0,
+    output.width,
+    output.height
+  );
+
+
+  ctx.drawImage(
+    img,
+
+    sourceX,
+    sourceY,
+    sourceWidth,
+    sourceHeight,
+
+    0,
+    0,
+    output.width,
+    output.height
+  );
+
+
+  output.toBlob(
+    function(blob) {
+
+      if (!blob) {
+
+        alert(
+          "Could not crop image."
+        );
+
+        return;
+      }
+
+
+      const croppedFile =
+        new File(
+          [blob],
+          "cropped-image.jpg",
+          {
+            type: "image/jpeg"
+          }
+        );
+
+
+      /*
+        Save pending image.
+      */
+
+      let key;
+
+
+      if (
+        cropState.targetType ===
+        "member"
+      ) {
+
+        key =
+          `member-${cropState.memberIndex}-${cropState.photoIndex}`;
+
+      } else {
+
+        key =
+          `feat-${cropState.memberIndex}`;
+
+      }
+
+
+      pendingImages[key] =
+        croppedFile;
+
+
+      /*
+        Update admin preview.
+      */
+
+      let previewId;
+
+
+      if (
+        cropState.targetType ===
+        "member"
+      ) {
+
+        previewId =
+          `preview-${cropState.memberIndex}-${cropState.photoIndex}`;
+
+      } else {
+
+        previewId =
+          `feat-preview-${cropState.memberIndex}`;
+
+      }
+
+
+      const preview =
+        document.getElementById(
+          previewId
+        );
+
+
+      if (preview) {
+
+        const oldURL =
+          preview.dataset.objectUrl;
+
+
+        if (oldURL) {
+
+          URL.revokeObjectURL(
+            oldURL
+          );
+
+        }
+
+
+        const objectURL =
+          URL.createObjectURL(
+            croppedFile
+          );
+
+
+        preview.src =
+          objectURL;
+
+        preview.dataset.objectUrl =
+          objectURL;
+
+      }
+
+
+      cancelCrop();
+
+    },
+    "image/jpeg",
+    0.94
+  );
+
+}
+
+
+/* =====================================================
+   CANCEL
+===================================================== */
+
+function cancelCrop() {
+
+  document
+    .getElementById("cropModal")
+    .classList.remove("show");
+
+
+  cropState.file = null;
+  cropState.image = null;
+
+  cropState.dragging = false;
+
+  cropState.offsetX = 0;
+  cropState.offsetY = 0;
+  cropState.scale = 1;
+
+}
+
+
+/* =====================================================
+   PENDING IMAGES
+===================================================== */
+
+const pendingImages = {};
+
+
+/* =====================================================
+   UPLOAD IMAGE
+===================================================== */
+
+async function uploadImage(file) {
+
+  if (!supabaseClient) {
+
+    alert(
+      "Supabase is not connected. Add your Supabase URL and publishable key."
+    );
+
+    return null;
+  }
+
+  const filename =
+    `${Date.now()}-${Math.random()
+      .toString(36)
+      .substring(2)}.jpg`;
+
+  const path =
+    `uploads/${filename}`;
+
+  const { error } =
+    await supabaseClient
+      .storage
+      .from("website_images")
+      .upload(
+        path,
+        file,
+        {
+          upsert: false,
+          contentType: "image/jpeg"
+        }
+      );
+
+  if (error) {
+
+    console.error(error);
+
+    alert(
+      "Image upload failed:\n" +
+      error.message
+    );
+
+    return null;
+  }
+
+  const { data } =
+    supabaseClient
+      .storage
+      .from("website_images")
+      .getPublicUrl(path);
+
+  return data.publicUrl;
+}
+
+/* =====================================================
+   SAVE EVERYTHING
+===================================================== */
+
+async function saveEverything() {
+
+  const saveMessage =
+    document.getElementById("saveMessage");
+
+  saveMessage.textContent =
+    "Saving...";
+
+
+  /* text */
+
+  siteData.members.forEach(
+    (member,index) => {
+
+      member.name =
+        document.getElementById(
+          `name-${index}`
+        ).value;
+
+      member.role =
+        document.getElementById(
+          `role-${index}`
+        ).value;
+
+      member.subtitle =
+        document.getElementById(
+          `subtitle-${index}`
+        ).value;
+
+
+      member.description =
+        member.description.map(
+          (_,d) => {
+
+            return document
+              .getElementById(
+                `desc-${index}-${d}`
+              )
+              .value;
+
+          }
+        );
+
+    }
+  );
+
+
+  siteData.feats.forEach(
+    (feat,index) => {
+
+      feat.title =
+        document.getElementById(
+          `feat-title-${index}`
+        ).value;
+
+      feat.description =
+        document.getElementById(
+          `feat-desc-${index}`
+        ).value;
+
+    }
+  );
+
+
+  /* images */
+
+  for (
+    const key of Object.keys(pendingImages)
+  ) {
+
+    const url =
+      await uploadImage(
+        pendingImages[key]
+      );
+
+
+    if (!url) {
+
+      saveMessage.textContent =
+        "Save stopped.";
+
+      return;
+
+    }
+
+
+    const parts =
+      key.split("-");
+
+
+    if (parts[0] === "member") {
+
+      const memberIndex =
+        Number(parts[1]);
+
+      const photoIndex =
+        parts[2];
+
+
+      if (photoIndex === "main") {
+
+        siteData
+          .members[memberIndex]
+          .main = url;
+
+      } else {
+
+        siteData
+          .members[memberIndex]
+          .photos[
+            Number(photoIndex)
+          ] = url;
+
+      }
+
+    }
+
+
+    if (parts[0] === "feat") {
+
+      const featIndex =
+        Number(parts[1]);
+
+      siteData
+        .feats[featIndex]
+        .image = url;
+
+    }
+
+  }
+
+
+  /* database */
+
+  if (supabaseClient) {
+
+    const { error } =
+      await supabaseClient
+        .from("site_content")
+        .upsert({
+          id: 1,
+          content: siteData
+        });
+
+
+    if (error) {
+
+      console.error(error);
+
+      saveMessage.textContent =
+        "Database error: " +
+        error.message;
+
+      return;
+
+    }
+
+  } else {
+
+    /*
+      Temporary local fallback.
+      For permanent public saving,
+      connect Supabase above.
+    */
+
+    localStorage.setItem(
+      "slsSiteData",
+      JSON.stringify(siteData)
+    );
+
+  }
+
+
+  clearPendingImages();
+
+  renderWebsite();
+
+  saveMessage.textContent =
+    "✓ Saved successfully.";
+
+}
+
+
+/* =====================================================
+   CLEAR PENDING
+===================================================== */
+
+function clearPendingImages() {
+
+  Object.keys(pendingImages)
+    .forEach(key => {
+
+      delete pendingImages[key];
+
+    });
+
+}
+
+
+/* =====================================================
+   LOAD SAVED DATA
+===================================================== */
+
+async function loadSavedData() {
+
+  if (!supabaseClient) {
+
+    const saved =
+      localStorage.getItem(
+        "slsSiteData"
+      );
+
+    if (saved) {
+
+      try {
+
+        siteData =
+          JSON.parse(saved);
+
+      } catch(error) {
+
+        console.log(error);
+
+      }
+
+    }
+
+    renderWebsite();
+
+    return;
+
+  }
+
+
+  const { data,error } =
+    await supabaseClient
+      .from("site_content")
+      .select("content")
+      .eq("id",1)
+      .maybeSingle();
+
+
+  if (
+    !error &&
+    data &&
+    data.content
+  ) {
+
+    siteData =
+      data.content;
+
+  }
+
+
+  renderWebsite();
+
+}
+
+
+/* =====================================================
+   CLOSE ADMIN + RESET EVERYTHING
+===================================================== */
+
+function closeAdmin() {
+
+  document
+    .getElementById("adminModal")
+    .classList.remove("show");
+
+  resetLogin();
+
+  clearPendingImages();
+
+  document
+    .getElementById("adminContent")
+    .innerHTML = "";
+
+  document
+    .getElementById("saveMessage")
+    .textContent = "";
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value) {
+
+  return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+
+}
+
+
+function safeURL(value) {
+
+  return String(value)
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadSavedData();
+
+</script>
+
+</body>
+</html>
