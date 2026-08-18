@@ -1095,12 +1095,12 @@ footer strong {
 
     <h2>Admin Login</h2>
 
-    <label>Username</label>
+    <label>Email</label>
 
     <input
       type="text"
       id="adminUsername"
-      placeholder="Username"
+      placeholder="Email"
       autocomplete="off">
 
     <label>Password</label>
@@ -1641,41 +1641,69 @@ document
    LOGIN
 ===================================================== */
 
-function loginAdmin() {
+async function loginAdmin() {
+  const email = document.getElementById("adminUsername").value.trim();
+  const password = document.getElementById("adminPassword").value;
+  const message = document.getElementById("loginMessage");
 
-  const username =
-    document.getElementById("adminUsername").value;
+  message.textContent = "Logging in...";
 
-  const password =
-    document.getElementById("adminPassword").value;
-
-  if (
-    username === "admin" &&
-    password === "password1"
-  ) {
-
-    document
-      .getElementById("loginModal")
-      .classList.remove("show");
-
-    document
-      .getElementById("adminModal")
-      .classList.add("show");
-
-    buildAdminPanel();
-
-  } else {
-
-    document
-      .getElementById("loginMessage")
-      .textContent =
-      "Wrong username or password.";
-
+  if (!supabaseClient) {
+    message.textContent = "Supabase is not connected.";
+    return;
   }
 
+  const { data, error } = await supabaseClient.auth.signInWithPassword({
+    email: email,
+    password: password
+  });
+
+  if (error) {
+    console.error("Login error:", error);
+    message.textContent = error.message;
+    return;
+  }
+
+  const { data: roleData, error: roleError } = await supabaseClient
+    .from("admin_roles")
+    .select("role")
+    .eq("user_id", data.user.id)
+    .single();
+
+  if (roleError || !roleData) {
+    console.error("Role error:", roleError);
+
+    await supabaseClient.auth.signOut();
+
+    message.textContent = "This account is not authorized.";
+    return;
+  }
+
+  window.currentAdminRole = roleData.role;
+  window.currentUserId = data.user.id;
+
+  console.log("Logged in as:", window.currentAdminRole);
+
+  document.getElementById("loginModal").classList.remove("show");
+  document.getElementById("adminModal").classList.add("show");
+
+  buildAdminPanel();
+
+  applyPermissions();
 }
 
 
+function applyPermissions() {
+  document.querySelectorAll(".owner-only").forEach(function(element) {
+
+    if (window.currentAdminRole === "owner") {
+      element.style.display = "";
+    } else {
+      element.style.display = "none";
+    }
+
+  });
+}
 function closeLogin() {
 
   document
@@ -1715,35 +1743,46 @@ function buildAdminPanel() {
 
   container.innerHTML = "";
 
+  const isOwner = window.currentAdminRole === "owner";
+
+
   siteData.members.forEach((member,index) => {
+
+    // Member 1 is locked for editors
+    const locked = index === 0 && !isOwner;
 
     container.innerHTML += `
 
-      <div class="admin-member">
+      <div class="admin-member"
+        style="${locked ? "opacity:0.55;" : ""}">
 
         <h3>
           Member ${index + 1}
+          ${locked ? " 🔒 OWNER ONLY" : ""}
         </h3>
 
         <label>Name</label>
 
         <input
           id="name-${index}"
-          value="${escapeHTML(member.name)}">
+          value="${escapeHTML(member.name)}"
+          ${locked ? "disabled" : ""}>
 
 
         <label>Role</label>
 
         <input
           id="role-${index}"
-          value="${escapeHTML(member.role)}">
+          value="${escapeHTML(member.role)}"
+          ${locked ? "disabled" : ""}>
 
 
         <label>Subtitle</label>
 
         <input
           id="subtitle-${index}"
-          value="${escapeHTML(member.subtitle)}">
+          value="${escapeHTML(member.subtitle)}"
+          ${locked ? "disabled" : ""}>
 
 
         <label>Main / Top Photo</label>
@@ -1752,16 +1791,17 @@ function buildAdminPanel() {
 
           <div
             class="drop-zone"
-            data-target="member-${index}-main">
+            data-target="member-${index}-main"
+            style="${locked ? "pointer-events:none;" : ""}">
 
             <span>📷</span>
 
             <strong>
-              Choose or drag image
+              ${locked ? "🔒 Owner only" : "Choose or drag image"}
             </strong>
 
             <small>
-              Crop will open automatically
+              ${locked ? "Only the owner can edit this profile" : "Crop will open automatically"}
             </small>
 
             <input
@@ -1769,6 +1809,7 @@ function buildAdminPanel() {
               id="file-${index}-main"
               accept="image/*"
               hidden
+              ${locked ? "disabled" : ""}
               onchange="
                 startCropFromInput(
                   event,
@@ -1793,7 +1834,9 @@ function buildAdminPanel() {
         ${member.description.map((text,d) => `
 
           <textarea
-            id="desc-${index}-${d}">${escapeHTML(text)}</textarea>
+            id="desc-${index}-${d}"
+            ${locked ? "disabled" : ""}
+          >${escapeHTML(text)}</textarea>
 
         `).join("")}
 
@@ -1818,10 +1861,11 @@ function buildAdminPanel() {
 
               <div
                 class="drop-zone"
-                data-target="member-${index}-${p}">
+                data-target="member-${index}-${p}"
+                style="${locked ? "pointer-events:none;" : ""}">
 
                 <strong>
-                  📷 Change / Drop
+                  ${locked ? "🔒 Owner only" : "📷 Change / Drop"}
                 </strong>
 
                 <input
@@ -1829,6 +1873,7 @@ function buildAdminPanel() {
                   id="file-${index}-${p}"
                   accept="image/*"
                   hidden
+                  ${locked ? "disabled" : ""}
                   onchange="
                     startCropFromInput(
                       event,
@@ -1937,8 +1982,6 @@ function buildAdminPanel() {
   attachDropZones();
 
 }
-
-
 /* =====================================================
    IMAGE PICKER
 ===================================================== */
@@ -3108,70 +3151,77 @@ async function saveEverything() {
   const saveMessage =
     document.getElementById("saveMessage");
 
-  saveMessage.textContent =
-    "Saving...";
+  saveMessage.textContent = "Saving...";
+
+  const isOwner =
+    window.currentAdminRole === "owner";
 
 
-  /* text */
+  /* TEXT */
 
-  siteData.members.forEach(
-    (member,index) => {
+  siteData.members.forEach((member, index) => {
 
-      member.name =
-        document.getElementById(
-          `name-${index}`
-        ).value;
+    // MEMBER 1 IS OWNER-ONLY
+    if (index === 0 && !isOwner) {
+      return;
+    }
 
-      member.role =
-        document.getElementById(
-          `role-${index}`
-        ).value;
+    member.name =
+      document.getElementById(`name-${index}`).value;
 
-      member.subtitle =
-        document.getElementById(
-          `subtitle-${index}`
-        ).value;
+    member.role =
+      document.getElementById(`role-${index}`).value;
+
+    member.subtitle =
+      document.getElementById(`subtitle-${index}`).value;
+
+    member.description =
+      member.description.map((_, d) => {
+
+        return document
+          .getElementById(`desc-${index}-${d}`)
+          .value;
+
+      });
+
+  });
 
 
-      member.description =
-        member.description.map(
-          (_,d) => {
+  /* GROUP FEATS */
 
-            return document
-              .getElementById(
-                `desc-${index}-${d}`
-              )
-              .value;
+  siteData.feats.forEach((feat, index) => {
 
-          }
-        );
+    feat.title =
+      document.getElementById(`feat-title-${index}`).value;
+
+    feat.description =
+      document.getElementById(`feat-desc-${index}`).value;
+
+  });
+
+
+  /* IMAGES */
+
+  for (const key of Object.keys(pendingImages)) {
+
+    const parts = key.split("-");
+
+
+    /*
+      Editors cannot upload/change
+      anything belonging to Member 1.
+    */
+
+    if (
+      parts[0] === "member" &&
+      Number(parts[1]) === 0 &&
+      !isOwner
+    ) {
+
+      continue;
 
     }
-  );
 
-
-  siteData.feats.forEach(
-    (feat,index) => {
-
-      feat.title =
-        document.getElementById(
-          `feat-title-${index}`
-        ).value;
-
-      feat.description =
-        document.getElementById(
-          `feat-desc-${index}`
-        ).value;
-
-    }
-  );
-
-
-  /* images */
-
-  for (
-    const key of Object.keys(pendingImages)
-  ) {
 
     const url =
       await uploadImage(
@@ -3187,10 +3237,6 @@ async function saveEverything() {
       return;
 
     }
-
-
-    const parts =
-      key.split("-");
 
 
     if (parts[0] === "member") {
@@ -3235,7 +3281,7 @@ async function saveEverything() {
   }
 
 
-  /* database */
+  /* DATABASE */
 
   if (supabaseClient) {
 
@@ -3262,12 +3308,6 @@ async function saveEverything() {
 
   } else {
 
-    /*
-      Temporary local fallback.
-      For permanent public saving,
-      connect Supabase above.
-    */
-
     localStorage.setItem(
       "slsSiteData",
       JSON.stringify(siteData)
@@ -3284,7 +3324,6 @@ async function saveEverything() {
     "✓ Saved successfully.";
 
 }
-
 
 /* =====================================================
    CLEAR PENDING
